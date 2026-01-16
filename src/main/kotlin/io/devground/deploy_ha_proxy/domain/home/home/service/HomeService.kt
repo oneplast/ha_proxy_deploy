@@ -2,6 +2,7 @@ package io.devground.deploy_ha_proxy.domain.home.home.service
 
 import org.springframework.stereotype.Service
 import java.lang.Thread.sleep
+import java.net.InetAddress
 
 @Service
 class HomeService {
@@ -11,6 +12,9 @@ class HomeService {
     }
 
     fun getGreetings(): String {
-        return "Hello, World!"
+
+        val inetAddress = InetAddress.getLocalHost()
+
+        return "Hello, World!, $inetAddress"
     }
 }
